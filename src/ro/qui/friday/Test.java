@@ -1,8 +1,16 @@
 package ro.qui.friday;
+
+import java.io.IOException;
+
 class Test{
 	public static void main(String [] args) {
 		AudioPlayer player = new GstreamerAudioPlayer(args);
-		player.setSource("/media/7EACCA30ACC9E32F/muzica/Noisettes/07-Atticus.mp3");
-		player.play();
+		CommandProcessor cmd = new CommandProcessor(player);
+		try {
+			cmd.process();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}	
 }

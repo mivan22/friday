@@ -1,6 +1,6 @@
 package ro.qui.friday;
 
-public interface AudioPlayer {
+public interface AudioPlayer extends Runnable{
 	/**
 	 * The audio player must play something. This function
 	 * gives it something to play. Usually it is in the form
@@ -15,5 +15,7 @@ public interface AudioPlayer {
 	 */
 	public boolean play();
 	public boolean pause();
-	public boolean stop();	
+	public boolean stop();
+	public boolean isPlaying();
+	public boolean isPaused();
 }
